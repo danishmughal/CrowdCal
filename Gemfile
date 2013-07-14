@@ -35,6 +35,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'annotate'
+
 # ---------------------------------------------
 
 # To use ActiveModel has_secure_password

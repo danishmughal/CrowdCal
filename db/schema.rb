@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20130714215755) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "bio"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
