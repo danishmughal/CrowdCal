@@ -18,6 +18,7 @@
 #  provider               :string(255)
 #  uid                    :string(255)
 #  name                   :string(255)
+#  bio                    :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -27,6 +28,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
+
+  has_many :events
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :name, :bio
