@@ -43,3 +43,16 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+<% if user_signed_in? %>
+  <% if @attending %>
+    You are already attending this event 
+  <% else %>
+    <%= link_to 'Attend this event!', {:controller => "main", 
+                         :action => "attend_event", 
+                         :user_id => current_user.id, 
+                         :event_id => @event.id},
+                         :method => "post" %>
+  <% end %>
+<% end %>
+

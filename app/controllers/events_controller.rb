@@ -15,6 +15,13 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
 
+    if user_signed_in?
+      if !Attendee.where('user_id = ? AND event_id = ?', current_user.id, @event.id).blank?
+        @attending = true
+      end
+    end
+
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
