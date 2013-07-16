@@ -1,3 +1,48 @@
 <h1>Crowdcal</h1>
 
 <%= link_to "Events", events_path %>
+<br>
+<br>
+
+Current time: <%= Time.zone.now %><br><br>
+
+<h3>Upcoming Events:</h3>
+<% if !@events.nil? %>
+	
+	<% @events.each do |e| %>
+
+		<strong>Name:</strong> <%= link_to e.name, e %><br>
+		<strong>Venue:</strong> <%= e.venue %><br>
+		<strong>When:</strong> <%= e.start_time %> - <%= e.end_time %><br>
+		<strong>Description:</strong> <%= e.description %><br>
+
+		<br>
+		<br>
+		<br>
+
+	<% end %>
+
+<% else %>
+No upcoming events.
+<% end %>
+
+
+<h3>Past Events:</h3>
+<% if !@pastevents.nil? %>
+	
+	<% @pastevents.each do |e| %>
+
+		<strong>Name:</strong> <%= link_to e.name, e %><br>
+		<strong>Venue:</strong> <%= e.venue %><br>
+		<strong>When:</strong> <%= e.start_time %> - <%= e.end_time %><br>
+		<strong>Description:</strong> <%= e.description %><br>
+
+		<br>
+		<br>
+		<br>
+
+	<% end %>
+
+<% else %>
+No Past events.
+<% end %>

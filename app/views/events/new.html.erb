@@ -1,5 +1,14 @@
+<% if user_signed_in? %>
+
 <h1>New event</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', events_path %>
+
+
+<% else %>
+
+You must be signed in to do that.
+
+<% end %>
