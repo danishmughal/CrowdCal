@@ -12,7 +12,10 @@
 class Attendee < ActiveRecord::Base
   attr_accessible :event_id, :user_id
 
+  validates :event_id, presence: true
+  validates :user_id, presence: true
+
   belongs_to :event
   belongs_to :user
-  
+
 end

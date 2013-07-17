@@ -1,6 +1,15 @@
+<% if user_signed_in? && (@event.user = current_user) %>
+
 <h1>Editing event</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>
+
+
+<% else %>
+<br>
+You can't do that.
+
+<% end %>
