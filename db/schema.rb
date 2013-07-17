@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130715224317) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "squareimage"
     t.string   "bio"
   end
 

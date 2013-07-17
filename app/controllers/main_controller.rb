@@ -8,6 +8,15 @@ class MainController < ApplicationController
 	    @attendee = Attendee.new(:event_id => params['event_id'], :user_id => params['user_id'])
 	    @attendee.save
 
-	    redirect_to '/'
+	    @event = Event.find(params['event_id'])
+	    redirect_to @event
+	end
+
+	def cancel_attend_event
+		@attendee = Attendee.where(:event_id => params['event_id'], :user_id => params['user_id']).first
+		@attendee.destroy
+
+	    @event = Event.find(params['event_id'])
+	    redirect_to @event
 	end
 end

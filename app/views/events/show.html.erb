@@ -43,10 +43,16 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
-
+<br>
+<br>
 <% if user_signed_in? %>
   <% if @attending %>
-    You are already attending this event 
+    You are <strong>attending</strong> this event.<br>
+    <%= link_to 'Cancel attending this event.', {:controller => "main", 
+                         :action => "cancel_attend_event", 
+                         :user_id => current_user.id, 
+                         :event_id => @event.id},
+                         :method => "post" %>
   <% else %>
     <%= link_to 'Attend this event!', {:controller => "main", 
                          :action => "attend_event", 
@@ -56,3 +62,18 @@
   <% end %>
 <% end %>
 
+<br>
+<br>
+
+<h3>People going: </h3>
+<% if !@attendees.empty? %>
+
+  <% @attendees.each do |a| %>
+    <%= image_tag(a.user.squareimage) %>
+  <% end %>
+
+<% else %>
+  
+  No one is going yet. Be the first one!
+
+<% end %>

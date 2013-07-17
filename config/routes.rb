@@ -9,6 +9,7 @@ CrowdCal::Application.routes.draw do
   root to: 'main#home'
 
   match '/attend' => 'main#attend_event'
+  match '/cancelattend' => 'main#cancel_attend_event'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
