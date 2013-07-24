@@ -18,6 +18,7 @@
 #  provider               :string(255)
 #  uid                    :string(255)
 #  name                   :string(255)
+#  squareimage            :string(255)
 #  bio                    :string(255)
 #
 

@@ -36,10 +36,17 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @event.user_id %>
+  <b>Organizer:</b>
+  <%= @event.user.name %>
+  <%= image_tag(@event.user.squareimage) %>
 </p>
 
+<% if @event.host? %>
+<p>
+  <b>Host:</b>
+  <%= @event.host %>
+</p>
+<% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+
+  before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
+
+
   # GET /events
   # GET /events.json
   def index
@@ -43,6 +47,14 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    unless @event.user == current_user
+      flash[:error] = "You can't do that."
+      if request.referer
+        redirect_to(request.referer)
+      else
+        redirect_to root_path
+      end
+    end
   end
 
   # POST /events
@@ -88,4 +100,7 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
 end

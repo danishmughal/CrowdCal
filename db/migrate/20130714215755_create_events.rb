@@ -9,6 +9,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :description
       t.string :category
       t.integer :user_id
+      t.string :host
 
       t.timestamps
     end
