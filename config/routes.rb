@@ -1,5 +1,8 @@
 CrowdCal::Application.routes.draw do
 
+  resources :comments
+
+
   resources :events
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

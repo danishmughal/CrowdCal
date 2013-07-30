@@ -11,6 +11,7 @@
 #  description :string(255)
 #  category    :string(255)
 #  user_id     :integer
+#  host        :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -21,6 +22,7 @@ class Event < ActiveRecord::Base
   # Basic relations to the other models
   belongs_to :user
   has_many :attendees
+  has_many :comments
 
   # Basic presence validations for the form. I've made the address optional but venue required.
   validates :name, presence: true

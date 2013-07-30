@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendees = Attendee.where('event_id = ?', @event.id)
+    @comments = Comment.where('event_id = ?', @event.id)
 
     if user_signed_in?
       if !Attendee.where('user_id = ? AND event_id = ?', current_user.id, @event.id).blank?

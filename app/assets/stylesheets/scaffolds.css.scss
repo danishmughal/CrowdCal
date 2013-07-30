@@ -35,11 +35,11 @@ div {
   }
 }
 
-#notice, .success {
+#notice {
   color: green;
 }
 
-.field_with_errors, .error {
+.field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
