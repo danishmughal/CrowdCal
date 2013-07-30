@@ -1,8 +1,13 @@
 CrowdCal::Application.routes.draw do
 
+  namespace :api, defaults: {format: 'json'} do
+    namespace :dev do
+      resources :events
+      resources :users
+    end
+  end
+
   resources :comments
-
-
   resources :events
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

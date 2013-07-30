@@ -10,7 +10,6 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @events }
     end
   end
 
@@ -26,12 +25,6 @@ class EventsController < ApplicationController
         @attending = true
       end
     end
-
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @event }
-    end
   end
 
   # GET /events/new
@@ -41,7 +34,6 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @event }
     end
   end
 

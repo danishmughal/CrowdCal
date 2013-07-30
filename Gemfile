@@ -39,6 +39,8 @@ gem 'annotate'
 
 gem 'better_errors'
 gem 'binding_of_caller'
+
+gem 'rabl'
 # ---------------------------------------------
 
 # To use ActiveModel has_secure_password
