@@ -19,6 +19,8 @@
 class Event < ActiveRecord::Base
   attr_accessible :address, :category, :description, :end_time, :name, :start_time, :user_id, :venue, :host
   
+  searchkick
+
   # Basic relations to the other models
   belongs_to :user
   has_many :attendees

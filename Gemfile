@@ -43,6 +43,8 @@ gem 'binding_of_caller'
 gem 'rabl'
 
 gem 'random_data'
+
+gem 'searchkick'
 # ---------------------------------------------
 
 # To use ActiveModel has_secure_password

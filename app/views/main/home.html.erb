@@ -1,10 +1,15 @@
 <h1>Crowdcal</h1>
 
-<%= link_to "Events", events_path %>
-<br>
-<br>
+<%= form_tag('/search/events', :method => "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
-Current time: <%= Time.zone.now %><br><br>
+
+<h2><%= link_to "Events", events_path %></h2>
+<br>
+<br>
 
 <h3>Upcoming Events:</h3>
 <% if !@events.nil? %>

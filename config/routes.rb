@@ -18,6 +18,11 @@ CrowdCal::Application.routes.draw do
   match '/attend' => 'main#attend_event'
   match '/cancelattend' => 'main#cancel_attend_event'
 
+  match '/search' => 'search#generalsearch'
+  match '/search/events' => 'search#eventsearch'
+  match '/search/users' => 'search#usersearch'
+  match '/search/location' => 'search#locationsearch'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

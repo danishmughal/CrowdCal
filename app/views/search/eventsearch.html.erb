@@ -1,0 +1,9 @@
+<h3>Search results for: "<%= @query %>"</h3>
+
+
+<% @events.each do |event| %>
+	<%= link_to highlight(event.name, @query.split), event %><br>
+	<%= highlight(event.description, @query.split) %><br>
+	<br>
+	<br>
+<% end %>
