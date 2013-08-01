@@ -41,6 +41,8 @@ gem 'better_errors'
 gem 'binding_of_caller'
 
 gem 'rabl'
+
+gem 'random_data'
 # ---------------------------------------------
 
 # To use ActiveModel has_secure_password
