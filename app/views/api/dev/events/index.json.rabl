@@ -6,6 +6,15 @@ child :user => 'organizer' do
   node(:url) { |user| user_url(user) }
 end
 
+child :attendees do
+	attributes :id, :user_id
+	node(:name) { |attendees| attendees.user.name }
+
+end
+
 child :comments do
 	attributes :id, :body
+	node(:user_id) { |comments| comments.user.id }
+	node(:user) { |comments| comments.user.name }
+	node(:url) { |comments| user_url(comments.user) }
 end

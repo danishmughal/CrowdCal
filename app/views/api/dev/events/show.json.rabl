@@ -8,6 +8,8 @@ end
 
 child :attendees do
 	attributes :id, :user_id
+	node(:name) { |attendees| attendees.user.name }
+
 end
 
 child :comments do
