@@ -1,5 +1,8 @@
 <h3>Search results for: "<%= @query %>"</h3>
 
+<% if @events.empty? %>
+No results.
+<% end %>
 
 <% @events.each do |event| %>
 	<%= link_to highlight(event.name, @query.split), event %><br>

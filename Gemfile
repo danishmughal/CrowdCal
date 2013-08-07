@@ -45,6 +45,8 @@ gem 'rabl'
 gem 'random_data'
 
 gem 'searchkick'
+
+gem 'turbolinks'
 # ---------------------------------------------
 
 # To use ActiveModel has_secure_password
