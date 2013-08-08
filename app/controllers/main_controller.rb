@@ -19,4 +19,7 @@ class MainController < ApplicationController
 	    @event = Event.find(params['event_id'])
 	    redirect_to @event
 	end
+
+	def grid
+	end
 end

@@ -23,6 +23,8 @@ CrowdCal::Application.routes.draw do
   match '/search/users' => 'search#usersearch'
   match '/search/location' => 'search#locationsearch'
 
+  match '/grid' => 'main#grid'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
